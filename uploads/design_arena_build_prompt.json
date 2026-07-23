@@ -1,0 +1,183 @@
+{
+  "_file": "design_arena_build_prompt.json",
+  "_usage": "SINGLE-PASTE. Self-contained — paste this whole file into Design Arena. It carries all the data and structure needed to generate the full site in one pass. Replace every <<CONFIRM>> with client-verified data before publishing anything public. Never fabricate medical claims, credentials, awards, stats, or reviews.",
+
+  "role": "You are the lead Digital Transformation Consultant, Creative Director, Enterprise UX/Information Architect, Next.js architect, Medical SEO + AI-Search (SAG·EO) specialist, and personal-branding strategist for a premium Ayurveda healthcare website. Build a modern, classy, brand-colour-centric, fast, accessible website for Susrutha Ayurveda. It should feel like a trusted institution with heritage — the Mayo Clinic's credibility + a heritage-luxury brand's craft + Apple's restraint, expressed through authentic Kerala Ayurveda. No template feel, no filler, no emojis.",
+
+  "build_stack": {
+    "frontend": "Next.js (App Router, TypeScript, SSG for content, ISR/SSR where fresh data matters)",
+    "styling": "Tokenized system — CSS variables / Tailwind mapped to brand tokens. No hardcoded colours.",
+    "backend_target": "Content is CMS-driven (Django + MySQL). Doctor/treatment/condition/package/article/branch/testimonial/FAQ pages are dynamic templates, not hardcoded. Build them to consume a JSON/REST content model; where no live API exists, render from the seed data below.",
+    "animation": "Framer Motion / CSS + IntersectionObserver. Honour prefers-reduced-motion. Zero layout shift.",
+    "3d": "Lightweight (R3F/Three, or optimized SVG/Lottie/video where cheaper). Lazy-load, degrade gracefully, never block LCP.",
+    "icons": "One premium line-icon set (Phosphor or Lucide) + custom botanical/therapy SVG glyphs. No emojis."
+  },
+
+  "brand_system": {
+    "note": "Exact Susrutha hexes are unconfirmed — extract from client logo and swap in. These premium Ayurveda defaults are safe to build with. Never use generic medical blue.",
+    "tokens": {
+      "--sus-green-deep": "#123524",
+      "--sus-green": "#1E5631",
+      "--sus-green-soft": "#3E7C59",
+      "--sus-gold": "#B8860B",
+      "--sus-gold-soft": "#D4AF6A",
+      "--sus-cream": "#F6F1E7",
+      "--sus-sand": "#E9DFC9",
+      "--sus-terracotta": "#B4532A",
+      "--sus-ink": "#1C1B17",
+      "--sus-muted": "#6B6659"
+    },
+    "colour_rules": ["Deep green = authority/headers/trust anchors. Gold = accents & credentials only, never large fills. Cream/sand = calm reading surfaces. One confident CTA colour per viewport; never two loud colours competing.", "Botanical texture + generous whitespace over gradients. No neon, no heavy shadows, no clipart."],
+    "typography": {"display": "High-contrast elegant serif for headlines (Cormorant Garamond / Fraunces) — heritage + premium.", "body": "Humanist sans for body/UI (DM Sans / Inter) — clarity + modernity.", "rule": "Serif for emotion & authority, sans for information & interface. Support Malayalam script for local names/terms."},
+    "feel": ["premium", "calm", "authentic", "credible", "human", "editorial", "photography-forward"],
+    "avoid": ["template/stock feel", "medical blue everywhere", "neon", "cheap gradients", "heavy drop shadows", "emojis", "clipart", "visual clutter"]
+  },
+
+  "motion_and_3d": {
+    "principle": "Motion serves comprehension and calm, never spectacle. Organic easing, restrained duration, performance-safe, reduced-motion fallback for every effect.",
+    "signature_moments": [
+      "Hero: layered 3D/parallax botanical or herb-and-brass-mortar scene with slow ambient drift; headline stays crisp and legible; must not block LCP.",
+      "Legacy timeline: scroll-driven reveal 1970 → today; milestone nodes animate in.",
+      "Panchakarma/therapy explainer: animated step-by-step process diagram.",
+      "Director sections: cinematic scroll with depth/parallax portrait, animated pull-quote, credential reveal.",
+      "Cards: premium hover (subtle lift, gentle image zoom, accent underline).",
+      "Counters: animate only verifiable numbers (beds, years, branches)."
+    ]
+  },
+
+  "entity_facts": {
+    "legal_name": "Susrutha Institute of Ayurvedic Sciences (Research) and Panchakarma Hospital",
+    "common_name": "Susrutha Ayurveda",
+    "positioning": "Authentic Kerala Ayurveda, backed by research, lineage and modern hospital infrastructure.",
+    "legacy_framing": "Lead with ~55 years of family Ayurveda lineage (since 1970) and ~40 years as Susrutha (since 1986). Do NOT claim '50+ years of the hospital'. Frame lineage vs institution honestly (medical EEAT).",
+    "bed_strength": "40-bed hospital",
+    "locations": {
+      "main": "Kattakada (Kattakkada), Thiruvananthapuram, Kerala, India",
+      "branch": "Kowdiar Centre — OP outlet, Trivandrum (since June 2022)",
+      "ayur_village": "Susrutha Ayurveda Gramam — ~20 km from Trivandrum International Airport; 4 traditional Kerala cottages with private treatment rooms"
+    },
+    "contact": {"mobile": "+91 96566 56736", "landline": "0471-2291027", "emergency": ["+91 9656656736", "+91 9446583803", "+91 9447892399"], "email": "info@susruthaayurveda.com", "facebook": "https://www.facebook.com/susruthaayurvedatvm", "instagram": "https://www.instagram.com/susruthaayurvedatvm/", "google_review": "https://g.page/r/CZQZsDKfvtExEB0/review"},
+    "hours": {"hospital": "24x7", "op": "9:00 AM–7:00 PM", "customer_care": "8:00 AM–7:00 PM", "pharmacy": "8:00 AM–7:00 PM", "treatment": "8:00 AM–6:00 PM"},
+    "vision": "Deliver high-quality medicines and affordable treatment for everyone, realizing the dream of a healthier tomorrow.",
+    "mission": "Grow Susrutha into a global Ayurvedic brand and spread authentic Kerala health practices around the world."
+  },
+
+  "directors_focus": {
+    "priority": "MAXIMUM design + SAG·EO investment. Each gets a cinematic personal-brand profile (author entity, Person schema), a thought-leadership content stream, a signature philosophy quote, and a 'Medically reviewed by' credit on their clinical pages. <<CONFIRM>> fields must not be invented.",
+    "list": [
+      {"name": "Dr. Krishnakumar K.", "qual": "MD (Ayur)", "role": "Director / Chief Physician — leads the Research Institute & hospital", "lineage": "Son of Prof. Dr. Krishnankutty Nair", "availability": "On appointment", "pillars": ["research-driven Ayurveda", "Panchakarma authority", "classical Ayurveda + modern hospital practice"], "confirm": ["years of experience", "specializations", "publications/research", "awards", "portrait", "signature quote", "video"]},
+      {"name": "Dr. Sreeja Krishna S.", "qual": "BAMS, MBA (Hospital Management)", "role": "Director — clinical practice + hospital administration", "lineage": "Daughter of Prof. Dr. Krishnankutty Nair", "availability": "Kattakada Tue/Thu/Sat 9:00 AM–4:00 PM; Kowdiar Wed 9:00 AM–5:00 PM", "pillars": ["patient-first hospital experience", "women & family wellness", "modernizing authentic Ayurveda"], "confirm": ["years of experience", "focus areas", "awards", "portrait", "signature quote", "video"]},
+      {"name": "Dr. Priyanka R.", "qual": "BAMS, MS (Ayur) — Ayurvedic Gynaecologist & Obstetrician", "role": "Specialist Director — Women's Health, Fertility, Prasuti Tantra & Stree Roga", "availability": "Kattakada Sun/Mon/Wed/Fri 9:00 AM–5:00 PM; Kowdiar Tue 9:00 AM–5:00 PM", "pillars": ["Ayurvedic women's health & fertility", "postnatal (Sutika) care", "menstrual & hormonal wellness"], "confirm": ["years of experience", "signature treatments", "awards", "portrait", "signature quote", "video"]}
+    ]
+  },
+
+  "other_doctors": [
+    {"name": "Dr. M. K. Sasidharan", "credential": "Retd. Professor, Govt. Ayurveda College, Trivandrum; Former Head, Panchakarma Hospital, Poojappura", "seat": "Kowdiar — Sat 9:00 AM–1:00 PM", "eeat": "high — govt-college pedigree"},
+    {"name": "Dr. Vinaya Babu B.", "credential": "BSc, BAMS; Chief Medical Officer (Rtd), Govt. of Kerala", "seat": "Kowdiar — Mon, Thu 9:00 AM–1:00 PM", "eeat": "govt CMO credibility"},
+    {"name": "Dr. Dipu Sukumar", "credential": "BAMS; Ayurveda Proctologist (Piles & Fistula — Kshara Sutra)", "seat": "On appointment", "eeat": "owns ano-rectal/piles-fistula cluster"},
+    {"name": "Dr. Roopasree", "credential": "BAMS; Resident Medical Officer", "seat": "Kattakada — 24x7 RMO", "eeat": "round-the-clock trust signal"},
+    {"name": "Dr. K. Kaveri", "credential": "BAMS", "seat": "<<CONFIRM>>", "eeat": "roster depth"},
+    {"name": "Dr. Nithya P.", "credential": "BAMS", "seat": "Kowdiar — Sat 9:00 AM–3:00 PM", "eeat": "roster depth"}
+  ],
+  "legacy_figures": {
+    "founders": ["Sri P. Krishna Pillai (Late) — Ayurvedic Physician, founding visionary (1970)", "Sri P.K. Pillai (Late)"],
+    "patriarch": {"name": "Prof. Dr. Krishnankutty Nair (Late)", "role": "Former Chairman & MD; HOD/Superintendent, Dept. of Panchakarma, Govt. Ayurveda Panchakarma Hospital, Trivandrum; Professor (Agada Tantra, Roga Nidana, Kayachikitsa, Panchakarma)", "experience": "40+ years", "focus": "spine care, paediatrics, cancer care, communicable disease, dermatology", "awards_claimed": ["Pride of India", "Indira Gandhi Sadbhavana", "Bharath Jyothi", "Rashtreeya Rattan"], "role_in_story": "the 'leading light' — anchors the heritage narrative the three directors continue."}
+  },
+
+  "specialties": [
+    "Neck, Back & Joint Problems (degeneration from diet/lifestyle/stress/posture)",
+    "Stroke & Developmental Neurology (post-stroke rehab & palliative, unit since 2020)",
+    "Rheumatology (auto-immune connective-tissue disorders)",
+    "Women's Health & Fertility (Dr. Priyanka R.)",
+    "Developmental Paediatrics",
+    "Preventive Medicine (Rasayana / Ritucharya)",
+    "General Medicine (chronic disease)",
+    "Ano-Rectal / Proctology (Piles & Fistula, Kshara Sutra — Dr. Dipu Sukumar)"
+  ],
+
+  "packages": ["Ano-Rectal Care (Piles & Fistula)", "Rejuvenation", "Post-Natal Care (OP/IP)", "Low Back Pain Care", "Neck Pain Care", "3-Day Ayurveda", "5-Day Ayurveda", "7-Day Ayurveda Care", "16-Day Ayurveda Care", "Psoriasis & Skin Disease Care", "Stress Care", "Tekky (Occupational Disorder Care — desk/IT professionals)"],
+
+  "facilities": ["Rooms (Economic→Luxury: TV, AC/Non-AC, WiFi on demand, hot water, attached bath, in-room food & medical service)", "Panchakarma rooms (separate male/female, dedicated therapists)", "Operation Theatre", "Physiotherapy Unit", "Yoga Hall (naturally lit)", "Ayur Village (4 traditional cottages, private treatment rooms, near airport)"],
+
+  "verticals": [
+    {"name": "Susrutha Ayurveda Pharma", "detail": "GMP-certified pharmacy & manufacturing (2008)", "url": "https://susruthaayurvedapharma.com/"},
+    {"name": "Susrutha Charitable Medical Trust", "detail": "cancer awareness & early detection (2016)", "url": "http://susruthacmt.com/"},
+    {"name": "Susrutha Medi Tech Lab", "detail": "diagnostics; home sampling within 5 km (2015)"},
+    {"name": "Susrutha Advanced Ayurveda Nursing School", "detail": "Ayurveda nursing education (2013)"},
+    {"name": "Susrutha Life Care Pvt Ltd", "detail": "registered 2022"},
+    {"name": "Online & Home Consultation", "detail": "scheduled online consults; home consults for bedridden patients within 30 km"}
+  ],
+
+  "timeline": [
+    {"year": "1970", "event": "Original clinic founded (family roots)"},
+    {"year": "1986", "event": "Susrutha clinic & pharmacy at Kattakada"},
+    {"year": "2002", "event": "Registered 30-bedded Panchakarma hospital & institute"},
+    {"year": "2008", "event": "GMP-certified Ayurvedic Pharma"},
+    {"year": "2010", "event": "Ayurveda Village (Gramam)"},
+    {"year": "2012", "event": "Registered as partnership firm"},
+    {"year": "2013", "event": "Advanced Ayurveda Nursing School"},
+    {"year": "2015", "event": "Medi Tech Lab"},
+    {"year": "2016", "event": "Charitable Medical Trust"},
+    {"year": "2019", "event": "Susrutha CAN cancer-awareness movement"},
+    {"year": "2020", "event": "Proctology unit, Postnatal care, Post-stroke palliative care"},
+    {"year": "2022", "event": "Life Care Pvt Ltd (Apr); Kowdiar satellite OPD (Jun)"}
+  ],
+
+  "site_structure": {
+    "note": "Build exactly this IA. Individual pages for each doctor, treatment, condition and package (the old site collapsed these into single generic pages — do not repeat that).",
+    "pages": {
+      "home": ["Hero (positioning + trust + Book CTA, ambient 3D botanical)", "Trust strip (lineage years, 40 beds, 2 branches, verticals, review rating <<CONFIRM>>)", "Why Ayurveda / Why Susrutha", "The three directors (thought-leadership teaser → profiles)", "Specialities grid (8, each → own page)", "Signature therapies / Panchakarma explainer (animated)", "Legacy timeline teaser (1970→today)", "Packages highlight (→ own pages)", "Facilities & Ayur Village", "Research & verticals", "Patient stories/testimonials <<CONFIRM verified>>", "Knowledge Centre teaser", "International patients teaser", "Final Book CTA + branches map", "rule: feels like a directed documentary, every block ends with a soft helpful next step"],
+      "about": ["Heritage narrative (founders 1970 → Dr. Nair → today's directors)", "Interactive milestone timeline", "Vision / Mission / Principles", "Leadership (→ 3 directors)", "Research institute", "Verticals overview", "Recognition/affiliations <<CONFIRM>>"],
+      "doctor_index": ["Filter by branch/specialty/day", "Director cards elevated first (larger, thought-leadership framed)", "Full roster below", "each → individual profile"],
+      "doctor_profile_template": ["Portrait + name + credentials + role", "AI-summary block", "Philosophy/approach (author voice)", "Experience & education", "Specializations & signature treatments", "Research/publications/awards <<CONFIRM>>", "Articles/videos by this doctor", "Conditions & treatments they lead (links)", "Patient stories <<CONFIRM>>", "FAQ", "Book-with-this-doctor CTA (respect real availability)"],
+      "treatment_template": ["What it is (AI summary + human)", "Conditions treated (links)", "Who needs it", "Benefits (educational, no cure-claims)", "Procedure (animated diagram)", "Duration", "Preparation", "Recovery/aftercare", "Safety & who should avoid", "Doctors who perform it (links)", "Related packages", "FAQ", "Book CTA"],
+      "condition_template": ["Overview (AI summary + human)", "Ayurvedic understanding (dosha framing)", "Symptoms", "How Susrutha approaches it (treatment links)", "Relevant doctors", "Related packages", "FAQ", "Consult CTA"],
+      "package_template": ["Summary + who it's for", "What's included (therapies/consults/stay)", "Duration & typical day flow", "Educational focus", "Add-ons (Ayur Village stay, lab)", "Price <<CONFIRM or 'enquire'>>", "FAQ", "Enquiry CTA"],
+      "branches": ["Kattakada (hospital, 40-bed, OT, all facilities) & Kowdiar (OP outlet)", "each: NAP, hours, doctors + days, map/directions, gallery, LocalBusiness schema"],
+      "ayur_village": ["Experience narrative", "Cottages & privacy", "Airport proximity", "Ideal for (rejuvenation/international/escape)", "Enquiry CTA"],
+      "international_patients": ["Why Kerala / Why Ayurveda", "Travel & airport assistance", "Accommodation (Ayur Village)", "Interpreter/language <<CONFIRM>>", "Packages", "Visa support <<CONFIRM>>", "Recovery stay", "FAQ"],
+      "knowledge_centre": ["Pillar hubs", "Article template: author byline (director/doctor), AI summary, key takeaways, FAQ, related treatments"],
+      "media": ["Photos, Videos, Publications — schema-marked"],
+      "testimonials": ["Verified stories <<CONFIRM consent>>, Review schema, video where available"],
+      "affiliations": ["Recognitions, GMP, govt links, memberships <<CONFIRM each>>"],
+      "contact": ["Both branches, all phones, email, working forms, emergency block, map, hours"]
+    },
+    "global": {
+      "header": "Sticky. Logo, mega-menu (Treatments / Conditions / Doctors / Branches / Knowledge), predictive search, persistent Book Appointment + phone.",
+      "footer": "Trust-dense: NAP for both branches, hours, verticals with links, quick links, review link, e-brochure, socials, medical disclaimer, privacy.",
+      "mobile_quick_actions": ["Book Appointment", "Call", "WhatsApp", "Emergency", "Directions"],
+      "breadcrumbs": "every non-home page, schema-marked"
+    }
+  },
+
+  "working_features": {
+    "note": "The old site's forms and features were broken (dead links, failing forms, dental-template placeholder FAQ). Build these as real, working features.",
+    "appointment_booking": {"fields": ["name", "phone", "email(optional)", "branch", "doctor(optional, filtered by branch+day from availability above)", "service/specialty", "preferred date", "preferred time", "message"], "flow": "validate → confirmation screen → notify → record. Disclaimer: appointment is against doctor availability, confirm before travel. Handle failures gracefully."},
+    "package_enquiry": {"fields": ["name", "phone", "package(12 real ones)", "preferred dates", "no. of people", "international y/n", "message"]},
+    "contact_ask_feedback": ["working contact/ask form", "emergency quick block", "WhatsApp/call/directions", "Google-review deep link", "moderated testimonial submission"],
+    "faq": "Real Ayurveda-specific FAQ, schema-marked, attachable to any page",
+    "search": "predictive site search across treatments/conditions/doctors/FAQ/blog"
+  },
+
+  "sageo_per_page": {
+    "note": "SAG·EO = SEO + AEO (answer engines) + GEO (generative engines cite you by name) + compounding authority. Apply to every page.",
+    "render_as_real_html": ["AI summary (2–3 sentence extractable answer)", "human explanation (scannable + deep-read)", "quick facts / key takeaways", "FAQ (schema-marked)", "expert attribution ('Medically reviewed by [director]')", "internal links up/side/down"],
+    "structured_data": ["Organization + Hospital/MedicalClinic (site-wide)", "Physician + Person (each doctor, sameAs socials <<CONFIRM>>)", "MedicalCondition / MedicalTherapy / MedicalProcedure", "MedicalWebPage", "FAQPage", "Article/BlogPosting (author = director/doctor)", "Review/AggregateRating <<CONFIRM real>>", "LocalBusiness + ContactPoint (each branch)", "VideoObject/ImageObject", "BreadcrumbList", "WebSite + SearchAction"],
+    "hygiene": ["dynamic title/meta per page", "canonical, OG/Twitter", "clean hyphenated slugs", "301s from old .php URLs", "dynamic XML sitemap + robots.txt", "image alt text", "no duplicate content"],
+    "targets": ["top-3 for: Ayurveda hospital Trivandrum/Kattakada, Panchakarma hospital Kerala, Ayurvedic treatment for [condition], piles & fistula Ayurveda (Kshara Sutra), Ayurvedic gynaecologist Trivandrum, postnatal Ayurveda, Ayurveda for arthritis/back-pain/psoriasis/stress, Ayurveda medical tourism Kerala"]
+  },
+
+  "performance": {"lighthouse": "95+ all categories", "LCP": "<2s", "CLS": "<0.05", "INP": "excellent", "how": ["next/image responsive + modern formats", "lazy-load below-fold + 3D", "code-split heavy components", "SSG + edge cache/CDN", "minimal JS on content pages", "font-display swap + preload", "no motion-induced CLS"]},
+
+  "accessibility": {"standard": "WCAG 2.2 AA", "checklist": ["keyboard nav + visible focus", "semantic HTML + ARIA", "alt text", "form labels + error messaging", "token-based contrast", "prefers-reduced-motion", "adequate target sizes", "screen-reader-sane source order"]},
+
+  "guardrails": [
+    "Never fabricate medical claims, credentials, awards, statistics or reviews. Honour every <<CONFIRM>> — leave a content slot rather than invent.",
+    "YMYL discipline: educational framing, no diagnosis/cure promises, always route to consultation. Distinguish 'what Ayurveda traditionally addresses' from 'guaranteed results'.",
+    "Brand tokens only; premium icons only; no emojis; no template feel; no filler; no duplicate content.",
+    "Motion & 3D must never cost accessibility or Core Web Vitals.",
+    "Every page must earn its place on at least two of: user value, SEO/SAG·EO value, trust value, conversion value."
+  ],
+
+  "deliver": "A production-ready Next.js site matching this structure and design language: reusable components, dynamic templates (doctor/treatment/condition/package/article/branch), working booking + enquiry + contact + FAQ + search, full schema/SEO/SAG·EO, Lighthouse 95+, WCAG 2.2 AA. Provide a short README (routes, brand tokens, how to add a doctor/treatment/package)."
+}
